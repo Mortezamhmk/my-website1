@@ -1,0 +1,613 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .2s linear;
+    text-transform: capitalize;
+
+}
+
+body {
+    height: 10000000px;
+}
+
+
+
+
+/* <!-- heder section start --> */
+/* <!-- heder section start --> */
+/* <!-- heder section start --> */
+/* <!-- heder section start --> */
+/* <!-- heder section start --> */
+/* <!-- heder section start --> */
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+.logo {
+    font-size: 3rem;
+    color: #333;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.logo span {
+    color: pink;
+}
+
+.nabar a {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    color: #666;
+    text-decoration: none;
+}
+
+.nabar a:hover {
+    color: rgb(248, 93, 119);
+}
+
+.icons a {
+    font-size: 2.5rem;
+    margin-left: 1.5rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.icons a:hover {
+    color: rgb(248, 93, 119);
+}
+
+
+/* checkbox مخفی */
+#toggler {
+    display: none;
+}
+
+
+/* آیکون همبرگر */
+.fa-bars {
+    font-size: 3rem;
+    color: #333;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: .1rem solid rgba(0, 0, 0, .3);
+    display: none;
+}
+
+
+/* Tablet و Mobile */
+@media (max-width: 991px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        padding: 2rem;
+    }
+
+    .fa-bars {
+        display: block;
+    }
+
+
+    .nabar {
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        background: #eee;
+        border-top: .1rem solid rgba(0, 0, 0, .1);
+
+        /* حالت بسته */
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+
+    /* حالت باز */
+    #toggler:checked~.nabar {
+
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+
+    .nabar a {
+
+        display: block;
+
+        margin: 1.5rem;
+        padding: 1.5rem;
+
+        background: #fff;
+        border: .1rem solid rgba(0, 0, 0, .1);
+    }
+
+
+    .icons a {
+        font-size: 2rem;
+    }
+
+}
+
+
+/* موبایل کوچک */
+@media (max-width:450px) {
+
+    html {
+        font-size: 50%;
+    }
+
+}
+
+header {
+    background: rgba(83, 48, 71, 0.9);
+}
+
+.logo,
+.navbar a,
+.icons a {
+    color: #fff;
+}
+
+.navbar a:hover,
+.icons a:hover {
+    color: #ff9ec7;
+}
+
+.fa-bars {
+    color: #ffffff;
+    border: .1rem solid rgba(255, 255, 255, .3);
+    background: rgba(255, 255, 255, .08);
+}
+
+
+/* <!-- heder section end --> */
+/* <!-- heder section end --> */
+/* <!-- heder section end --> */
+/* <!-- heder section end --> */
+.home {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#bg-img {
+    position: absolute;
+    inset: -2%;
+    width: 104%;
+    height: 104%;
+    background:
+        linear-gradient(rgba(0, 0, 0, .35), rgba(0, 0, 0, .35)),
+        url("ChatGPT Image ۲۵ تیر ۱۴۰۵، ۱۷_۰۴_۰۴.png") center/cover no-repeat;
+    transition: transform .2s ease-out;
+    will-change: transform;
+    z-index: 1;
+}
+
+#glow {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: radial-gradient(circle at 78% 45%,
+            rgba(255, 170, 140, .18),
+            transparent 45%);
+    animation: breathe 5s ease-in-out infinite;
+    mix-blend-mode: screen;
+}
+
+@keyframes breathe {
+
+    0%,
+    100% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+#petal-layer {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.petal {
+    position: absolute;
+    top: -20px;
+    clip-path: polygon(50% 0%, 100% 25%, 85% 100%, 15% 100%, 0% 25%);
+    animation-name: fall, sway;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-5vh) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(105vh) rotate(360deg);
+    }
+}
+
+@keyframes sway {
+
+    0%,
+    100% {
+        margin-left: 0;
+    }
+
+    50% {
+        margin-left: 45px;
+    }
+}
+
+
+.fasle {
+    width: 75%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.content {
+    max-width: 50rem;
+    position: relative;
+    z-index: 10;
+}
+
+
+.content h3 {
+    font-size: 6rem;
+    color: pink;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+.content span {
+    font-size: 3.5rem;
+    color: pink;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+.content p {
+    font-size: 1.5rem;
+    color: #999;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #420e22;
+    color: #fff;
+    padding: .9rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: pink;
+}
+
+/* رنگ بندی سایت  */
+.content h3 {
+    color: #2b1b2f;
+}
+
+.content span {
+    color: #d14b7d;
+}
+
+.content p {
+    color: #3d3045;
+}
+
+.content h3 {
+    color: #ffffff;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.content span {
+    color: #ffd1dc;
+    text-shadow: 1px 1px 4px #000;
+}
+
+.content p {
+    color: #fff;
+    text-shadow: 1px 1px 5px #000;
+}
+
+.content h3 {
+    color: #ffe6f2;
+    text-shadow: 3px 3px #8b4a6b;
+}
+
+.content span {
+    color: #ff9fc5;
+}
+
+.content p {
+    color: #f5e6ee;
+}
+
+.content h3 {
+    color: #ffe6f2;
+    text-shadow: 3px 3px #8b4a6b;
+}
+
+.content span {
+    color: #ff9fc5;
+}
+
+.content p {
+    color: #f5e6ee;
+}
+
+.content h3,
+.content span,
+.content p {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* <!--  section end --> */
+/* <!--  section end --> */
+/* <!--  section end --> */
+/* <!--  section end --> */
+/* <!--  section end --> */
+
+
+
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    color: #333;
+    padding: 1rem;
+
+
+}
+
+.heading span {
+    color: pink;
+}
+
+.p1 {
+    background-image: url("ChatGPT Image ۲۶ تیر ۱۴۰۵، ۱۸_۱۸_۲۱.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.row {
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+
+}
+
+
+.video-container img {
+    width: 100%;
+    height: 100%;
+    border: 1.5rem solid #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    object-fit: cover;
+}
+
+.video-container h3 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: #ff0202;
+    background: #fff;
+    padding: 1rem 2rem;
+    width: 100%;
+    text-align: center;
+    mix-blend-mode: screen;
+    font-weight: bolder;
+
+}
+
+.video-container {
+    flex: 1 1 40rem;
+
+    position: relative;
+}
+
+.contentt {
+    flex: 1 1 40rem;
+
+
+}
+
+.contentt h3 {
+    font-size: 3.5rem;
+    color: #120101;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #ff4d8d;
+    width: 0;
+}
+
+/* فقط وقتی جاوااسکریپت این کلاس را اضافه کرد */
+.contentt h3.animate {
+    animation: typing 2s steps(14) forwards,
+        blink .7s infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 14ch;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+
+
+.contentt p {
+    font-size: 1.6rem;
+
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+
+
+}
+
+/* <!--  4section end --> */
+/* <!--  4section end --> */
+/* <!--  4section end --> */
+/* <!--  4section end --> */
+/* .icon img {
+    width: 70px;
+
+}
+
+.icon {
+
+    display: flex;
+    align-items: center;
+    background-color: #fbf8f8;
+    padding: 15px 25px;
+    gap: 7px;
+    width: 23%;
+
+}
+
+.icons2 {
+    padding: 38px 0;
+
+
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.icon-conta2 {
+    background-color: #b8a5a5;
+} */
+* {
+    box-sizing: border-box;
+}
+
+.fasle {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.icons2 {
+    padding: 38px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.icon {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: #fbf8f8;
+    padding: 15px 25px;
+    gap: 15px;
+    border-radius: 10px;
+}
+
+.icon img {
+    width: 70px;
+}
+
+.icon h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.icon p {
+    margin: 5px 0 0;
+    color: #777;
+}
+
+.icon-conta2 {
+    background-color: #b8a5a5;
+}
+
+@media(max-width:768px) {
+    .icons2 {
+        flex-direction: column;
+    }
+
+    .icon {
+        width: 100%;
+    }
+}
+
+.icon-conta2 {
+    background: #f3e6e8;
+}
+
+.icon {
+    background: #fffaf8;
+    border: 1px solid #f0d9df;
+}
+
+.icon h1 {
+    color: #4a3038;
+}
+
+.icon p {
+    color: #b88a9b;
+}
+
+.icon {
+    background: #fffaf8;
+    border: 1px solid #f0d9df;
+    box-shadow: 0 10px 25px rgba(90, 50, 70, 0.12);
+}
